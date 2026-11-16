@@ -1,0 +1,17 @@
+services:
+  portfolio:
+    build: .
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - .:/imports:ro
+      - ./config:/config:ro
+      - portfolio-data:/state
+    environment:
+      TZ: Asia/Kolkata
+      REFRESH_HOUR: "7"
+    restart: unless-stopped
+    init: true
+    stop_grace_period: 15s
+volumes:
+  portfolio-data:

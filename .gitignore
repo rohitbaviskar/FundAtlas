@@ -1,0 +1,54 @@
+# Only publish project source and shared configuration at the repository root.
+# Personal input folders and new root-level exports stay local by default.
+/*
+!/.gitignore
+!/.dockerignore
+!/README.md
+!/Dockerfile
+!/compose.yaml
+!/requirements.txt
+!/backend/
+!/frontend/
+!/config/
+
+# Keep the local test suite out of the shared repository.
+/tests/
+
+# Dependencies, generated output and local state, including nested copies.
+**/.venv/
+**/venv/
+**/__pycache__/
+**/.pytest_cache/
+**/node_modules/
+**/dist/
+**/build/
+**/.local-state/
+*.py[cod]
+*.sqlite*
+*.db
+*.db-*
+*.log
+.DS_Store
+
+# Statements, reports, backups, credentials and machine-specific settings.
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.tsv
+*.pdf
+*.zip
+*.bak
+.env
+.env.*
+*.pem
+*.key
+.aws/
+.codex/
+.agents/
+.vscode/
+.idea/
+
+# A person's fund overrides can reveal their holdings. Share only a blank template.
+/config/*
+!/config/schemes.example.json
